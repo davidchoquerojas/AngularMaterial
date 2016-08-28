@@ -141,6 +141,7 @@
     <Content Include="scripts\angular-material\angular-material.min.js" />
     <Content Include="scripts\angular\angular.js" />
     <Content Include="scripts\angular\angular.min.js" />
+    <Content Include="scripts\appjs\app-factory.js" />
     <Content Include="scripts\appjs\index-controller.js" />
     <Content Include="scripts\appjs\persona.js" />
     <Content Include="scripts\bootstrap.js" />

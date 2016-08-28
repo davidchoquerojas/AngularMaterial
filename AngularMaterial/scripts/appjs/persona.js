@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
-    angular.module('appAngular', []).controller('persona', persona);
-    persona.$inject = ['$location']; 
+    angular.module('appAngular', ['appDatos']).controller('persona', persona);
+    persona.$inject = ['$location', 'factoryDatos'];
 
-    function persona(location) {
+    function persona(location,dataFactory) {
         /* jshint validthis:true */
         var vm = this;
         vm.title = 'persona';
@@ -27,6 +27,9 @@
         }
         vm.guardar = function (persona) {
             console.log(persona);
+            dataFactory.Grabar(persona).success(function (respuesta) {
+                console.log(respuesta);
+            });
         }
         function activate() {
 

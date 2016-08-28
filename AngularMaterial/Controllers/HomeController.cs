@@ -17,7 +17,7 @@ namespace AngularMaterial.Controllers
             return View();
         }
         public void Grabar(Persona persona) {
-
+            var l = persona;
         }
     }
     public class Persona {
