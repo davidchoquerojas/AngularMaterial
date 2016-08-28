@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html ng-app="contactChipsDemo">
+<head>
+    <title>Hola Mundo</title>
+    <link rel="stylesheet" href="~/Content/angular-material.css" />
+    <link rel="stylesheet" href="~/Content/css/index.css" />
+</head>
+<body>
+    <div ng-controller="ContactChipDemoCtrl as ctrl" layout="column" ng-cloak>
+        <md-content class="md-padding autocomplete" layout="column">
+            <h2 class="md-title">Searching asynchronously.</h2>
+            <md-contact-chips ng-model="ctrl.contacts"
+                              md-contacts="ctrl.querySearch($query)"
+                              md-contact-name="name"
+                              md-contact-image="image"
+                              md-contact-email="email"
+                              md-require-match="true"
+                              md-highlight-flags="i"
+                              filter-selected="ctrl.filterSelected"
+                              placeholder="To">
+            </md-contact-chips>
+        </md-content>
+        <button ng-click="ctrl.consultar()">Consultar</button>
+    </div>
+    <script src="~/scripts/angular/angular.min.js"></script>
+    <script src="~/scripts/angular-animate/angular-animate.min.js"></script>
+    <script src="~/scripts/angular-aria/angular-aria.min.js"></script>
+    <script src="~/scripts/angular-material/angular-material.min.js"></script>
+    <script src="~/scripts/appjs/index-controller.js"></script>
+</body>
+</html>
