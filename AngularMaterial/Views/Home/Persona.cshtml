@@ -9,7 +9,14 @@
     <title>Persona</title>
 </head>
 <body ng-controller="persona as p">
-    <input type="number" ng-model="p.persona.ID"/>
+    <form novalidate name="frmPersona">
+        <input type="number" name="personId" ng-model="p.persona.ID" required/>
+        <span ng-show="frmPersona.personId.$invalid">*</span>
+        <br />
+        <input type="text" ng-model="p.persona.name" required />
+        <br />
+        <button ng-click="p.guardar(p.persona)" ng-disabled="frmPersona.$invalid">Grabar</button>
+    </form>
     <input type="text" ng-model="p.title"/>
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="person in p.listaPersona"><label>Nombre: {{person.name}}</label>  <label>Cumpleaños: {{person.fechaNacimiento | date:'short'}}</label> </li>
@@ -19,7 +26,6 @@
         <option value="">Seleccione</option>
     </select>
     <button ng-click="p.consular(24)">Consultar</button>
-    <button ng-click="p.guardar(p.persona)">Grabar</button>
     <h1>Bienveniddo</h1>
     <script src="~/scripts/angular/angular.min.js"></script>
     <script src="~/scripts/appjs/persona.js"></script>
